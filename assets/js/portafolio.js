@@ -103,6 +103,8 @@
 
     function abrirVisor(imagen) {
       if (!visor || !visorImagen) return;
+      // En modo edición, un clic en la imagen sirve para sustituirla.
+      if (document.body.classList.contains("editor-modo")) return;
       ultimoFoco = document.activeElement;
       visorImagen.src = imagen.currentSrc || imagen.src;
       visorImagen.alt = imagen.alt || "";

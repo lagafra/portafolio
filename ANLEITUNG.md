@@ -36,15 +36,18 @@ einseitiges PDF mit dem **Link** zum eportfolio.
 
 ## 2. Einrichtung in fünf Schritten
 
-### Schritt 1 – Inhalte einsetzen
-Alle Platzhalter im HTML sind mit `class="marcador"` markiert und im Browser rosa
-hinterlegt. Suchen nach `marcador`, Text ersetzen, danach das `class="marcador"`
-entfernen (oder den Span ganz auflösen). Wenn am Ende nichts mehr rosa
-hinterlegt ist, ist nichts vergessen worden.
+### Schritt 1 – Inhalte einsetzen (ohne Quelltext)
+Die Seite bringt einen eingebauten Bearbeitungsmodus mit – siehe Abschnitt 3.
+Kurz: Adresse mit `#editar` am Ende öffnen, direkt auf der fertig gestalteten
+Seite schreiben, am Ende **Descargar index.html** klicken. Es gibt aktuell
+**145 rosa markierte Platzhalter**; ist nichts mehr rosa, fehlt nichts.
 
-Aktuell: **145 Platzhalter**.
+Wer lieber im Quelltext arbeitet, sucht dort nach `class="marcador"`.
 
 ### Schritt 2 – Eigene Medien einsetzen
+Bilder, Video und Audio lassen sich ebenfalls im Bearbeitungsmodus tauschen.
+Von Hand geht es so:
+
 - **Bilder:** eigene Dateien nach `assets/img/` legen und im HTML den `src` ändern.
   Die vier mitgelieferten SVGs sind nur Attrappen und tragen unten rechts den
   Hinweis „IMAGEN DE EJEMPLO – SUSTITUIR".
@@ -91,7 +94,52 @@ nicht zur Hosting-URL.
 
 ---
 
-## 3. Fallstricke, die Punkte kosten können
+## 3. Bearbeiten ohne Quelltext
+
+Die Seite hat einen eingebauten Bearbeitungsmodus. Er ist unsichtbar, solange man
+ihn nicht ausdrücklich aufruft – Betreuerin und Prüfungsamt sehen nur die
+fertige Seite.
+
+**Aufrufen:** an die Adresse `#editar` anhängen, also
+`https://…/index.html#editar` – oder, wenn die Datei lokal liegt, die Datei im
+Browser öffnen und `#editar` hinter den Pfad schreiben. Beim ersten Aufruf
+erscheint eine kurze Erklärung.
+
+**Was dann geht:**
+
+| | |
+|---|---|
+| Text ändern | Auf einen beliebigen Text klicken und schreiben. Enter erzeugt einen Zeilenumbruch, das Layout bleibt heil. Eingefügter Text kommt immer als reiner Text an – Word-Formatierungen können nichts zerstören. |
+| Platzhalter abhaken | Die rosa Kästchen verlieren ihre Markierung automatisch, sobald der Text ersetzt ist. Unten links steht durchgehend, wie viele noch offen sind. |
+| Bilder tauschen | Auf ein Bild klicken, Datei auswählen. Fotos werden vor dem Einbetten automatisch auf 1600 px verkleinert, damit die Datei nicht aufgebläht wird; danach fragt der Editor nach dem Alternativtext. |
+| Video und Audio | Der Knopf unter dem jeweiligen Block fragt nach der Adresse. YouTube- und Google-Drive-Links werden selbst in die richtige Einbettungsform umgeschrieben. |
+| Zeilen, Aufzählungspunkte, ganze Muestras | Hineinklicken – oben rechts erscheinen **Duplizieren** und **Löschen**. So entstehen weitere Tabellenzeilen oder eine fünfte Muestra, ohne HTML anzufassen. |
+| Abschnitt umbenennen | Beim Ändern einer Überschrift schreibt sich der Eintrag im Inhaltsverzeichnis automatisch mit. |
+
+**Speichern:** unten rechts **Descargar index.html**. Der Browser lädt eine
+saubere Datei herunter – ohne Editor-Spuren, mit allen Änderungen. Diese Datei
+ersetzt die veröffentlichte `index.html` (bei Netlify Drop: Ordner erneut
+hineinziehen; bei GitHub: Datei ersetzen).
+
+**Wichtig:** Der Browser speichert nichts von selbst auf dem Server. Solange
+nicht heruntergeladen wurde, existieren die Änderungen nur im geöffneten Tab.
+Unten links steht deshalb dauerhaft „cambios sin descargar", und beim Schließen
+warnt der Browser. Zusätzlich legt der Editor eine Sicherheitskopie im Browser
+ab; falls doch etwas schiefgeht, bietet er beim nächsten Aufruf an, sie als
+`index-borrador.html` herunterzuladen.
+
+**Grenzen, ehrlich:** neue Abschnitte anlegen, die Reihenfolge umstellen oder das
+Design ändern geht damit nicht – dafür braucht es den Quelltext. Für das
+Ausfüllen und Pflegen eines fertigen Portfolios reicht es vollständig.
+
+Wenn sie später einmal ein richtiges Redaktionssystem möchte: **Publii** (Desktop-App,
+schreibt statische Seiten und veröffentlicht direkt auf GitHub Pages oder Netlify)
+oder **Decap CMS** wären die nächsten Schritte. Für dieses eine Portfolio wäre der
+Einrichtungsaufwand allerdings größer als der Nutzen.
+
+---
+
+## 4. Fallstricke, die Punkte kosten können
 
 - **Das Datum der letzten Bearbeitung muss im Portfolio sichtbar sein und darf
   nicht nach dem Abgabetermin liegen.** Es steht deshalb an zwei Stellen fest
@@ -114,7 +162,7 @@ nicht zur Hosting-URL.
 
 ---
 
-## 4. Aufbau nach dem Bewertungsraster (40 Punkte)
+## 5. Aufbau nach dem Bewertungsraster (40 Punkte)
 
 | Kriterium | Punkte | Wo im Paket |
 |---|---|---|
@@ -129,7 +177,7 @@ eigens bepunktet, macht die Muestras aber nachvollziehbar.
 
 ---
 
-## 5. Dateien
+## 6. Dateien
 
 ```
 portafolio/
@@ -137,7 +185,9 @@ portafolio/
 ├── ANLEITUNG.md               diese Datei
 └── assets/
     ├── css/estilos.css        gesamtes Design
+    ├── css/editor.css         Oberfläche des Bearbeitungsmodus
     ├── js/portafolio.js       Navigation, Fortschritt, Bildbetrachter
+    ├── js/editor.js           Bearbeiten auf der gerenderten Seite
     ├── img/*.svg              vier Platzhalter-Abbildungen
     └── audio/*.mp3            zwei stumme Platzhalter
 ```
@@ -149,14 +199,17 @@ Einbettungscode-Feld von Google Sites ist sie mit rund 100 KB zu groß.
 
 ---
 
-## 6. Technisches
+## 7. Technisches
 
 - Kein Framework, keine Build-Schritte, keine externen Abhängigkeiten außer den
   Schriften von Google Fonts (Fraunces, Karla, IBM Plex Mono). Fallen die aus,
   greifen systemeigene Ersatzschriften – das Layout bleibt stabil.
 - Getestet mit Chromium bei 1280 px und 390 px Breite: kein horizontales
   Überlaufen, keine JS-Fehler, Navigation markiert in allen sechs Abschnitten den
-  richtigen Eintrag.
+  richtigen Eintrag. Der Bearbeitungsmodus wurde durchgespielt: Text ändern,
+  Bild ersetzen (3000 px → 1600 px), Video- und Audioquelle tauschen, Zeile und
+  Muestra duplizieren und löschen, Export – die heruntergeladene Datei enthält
+  keine Editor-Reste und besteht dieselben Strukturprüfungen wie das Original.
 - Barrierefreiheit: Sprungmarke zum Inhalt, sichtbarer Tastaturfokus,
   `alt`-Texte, scrollbare Tabellen mit Tastaturzugriff, `prefers-reduced-motion`
   wird respektiert.

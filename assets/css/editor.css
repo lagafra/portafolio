@@ -1,0 +1,149 @@
+/* ============================================================
+   Modo edición — se activa solo con #editar en la dirección.
+   Sin esa activación, este archivo no cambia nada de la página.
+   ============================================================ */
+
+.editor-modo { padding-bottom: 5.5rem; }
+
+/* --- Zonas editables ---------------------------------------- */
+.editor-modo .editable {
+  outline: 1px dashed transparent;
+  outline-offset: 3px;
+  border-radius: 2px;
+  transition: outline-color 0.15s ease, background-color 0.15s ease;
+}
+.editor-modo .editable:hover { outline-color: var(--rosa-linea); }
+.editor-modo .editable:focus {
+  outline: 2px solid var(--rosa);
+  background: var(--blanco);
+}
+
+/* Las imágenes y los medios se pueden sustituir con un clic */
+.editor-modo .figura__marco { position: relative; }
+.editor-modo .figura__marco img { cursor: pointer; }
+.editor-modo .figura__marco::after {
+  content: "Clic para sustituir la imagen";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: var(--rosa);
+  color: var(--blanco);
+  font-family: var(--dato);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.6rem;
+  pointer-events: none;
+}
+
+/* --- Botones del editor ------------------------------------- */
+.editor-boton {
+  font-family: var(--dato);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--blanco);
+  color: var(--rosa-tinta);
+  border: 1px solid var(--rosa-linea);
+  border-radius: 3px;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.editor-boton:hover { border-color: var(--rosa); color: var(--rosa); }
+.editor-boton--lleno {
+  background: var(--rosa);
+  border-color: var(--rosa);
+  color: var(--blanco);
+}
+.editor-boton--lleno:hover { background: var(--rosa-tinta); color: var(--blanco); }
+.editor-boton--peligro:hover { border-color: #b3261e; color: #b3261e; }
+
+/* Botón para cambiar la fuente de audio y vídeo */
+.editor-medio {
+  display: inline-block;
+  margin-top: 0.8rem;
+}
+
+/* --- Barra inferior ----------------------------------------- */
+#editor-barra {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem clamp(0.75rem, 3vw, 1.5rem);
+  background: var(--blanco);
+  border-top: 1px solid var(--rosa-linea);
+  box-shadow: 0 -6px 24px rgba(138, 46, 76, 0.08);
+}
+#editor-barra .editor-estado {
+  font-family: var(--dato);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--gris);
+  margin: 0;
+  flex: 1 1 12rem;
+}
+#editor-barra .editor-estado b { color: var(--rosa-tinta); font-weight: 500; }
+#editor-barra .editor-estado .editor-guardado { color: var(--gris-claro); }
+
+/* --- Controles flotantes de bloque -------------------------- */
+#editor-bloque {
+  position: absolute;
+  z-index: 85;
+  display: none;
+  gap: 0.3rem;
+  background: var(--blanco);
+  border: 1px solid var(--rosa-linea);
+  border-radius: 3px;
+  padding: 0.25rem;
+  box-shadow: 0 4px 14px rgba(138, 46, 76, 0.12);
+}
+#editor-bloque.visible { display: flex; }
+#editor-bloque .editor-boton {
+  border: 0;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.68rem;
+}
+
+/* --- Ayuda -------------------------------------------------- */
+#editor-ayuda {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(34, 26, 29, 0.8);
+}
+#editor-ayuda.visible { display: flex; }
+#editor-ayuda .editor-ayuda__caja {
+  background: var(--blanco);
+  border-radius: 4px;
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  max-width: 34rem;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+#editor-ayuda h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+#editor-ayuda ol { padding-left: 1.2rem; margin: 0 0 1.4rem; }
+#editor-ayuda li { margin-bottom: 0.6rem; font-size: 0.95rem; }
+#editor-ayuda p { font-size: 0.95rem; }
+
+@media print {
+  #editor-barra,
+  #editor-bloque,
+  #editor-ayuda,
+  .editor-ui { display: none !important; }
+}
