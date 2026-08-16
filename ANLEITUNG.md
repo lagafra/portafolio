@@ -53,8 +53,9 @@ Von Hand geht es so:
   Hinweis „IMAGEN DE EJEMPLO – SUSTITUIR".
 - **Audio:** eigene Aufnahmen nach `assets/audio/` (die beiden mitgelieferten
   MP3s sind stumm). Format egal, `src` anpassen.
-- **Video:** in `Muestra 4` den Block `<p class="video__aviso">…</p>` durch den
-  iframe ersetzen, z. B.
+- **Video:** es gibt zwei Videoplätze – das Vorstellungsvideo auf der Startseite
+  (`.portada__video`) und die Unterrichtsaufzeichnung in `Muestra 4`. Jeweils den
+  Block `<p class="video__aviso">…</p>` durch den iframe ersetzen, z. B.
   `<iframe src="https://www.youtube.com/embed/VIDEO-ID" title="Fragmento de la sesión" allowfullscreen loading="lazy"></iframe>`
 
 ### Schritt 3 – Hochladen
@@ -112,7 +113,7 @@ erscheint eine kurze Erklärung.
 | Text ändern | Auf einen beliebigen Text klicken und schreiben. Enter erzeugt einen Zeilenumbruch, das Layout bleibt heil. Eingefügter Text kommt immer als reiner Text an – Word-Formatierungen können nichts zerstören. |
 | Platzhalter abhaken | Die rosa Kästchen verlieren ihre Markierung automatisch, sobald der Text ersetzt ist. Unten links steht durchgehend, wie viele noch offen sind. |
 | Bilder tauschen | Auf ein Bild klicken, Datei auswählen. Fotos werden vor dem Einbetten automatisch auf 1600 px verkleinert, damit die Datei nicht aufgebläht wird; danach fragt der Editor nach dem Alternativtext. |
-| Video und Audio | Der Knopf unter dem jeweiligen Block fragt nach der Adresse. YouTube- und Google-Drive-Links werden selbst in die richtige Einbettungsform umgeschrieben. |
+| Video und Audio | Der Knopf unter dem jeweiligen Block fragt nach der Adresse. YouTube- und Google-Drive-Links werden selbst in die richtige Einbettungsform umgeschrieben. Das gilt für beide Videoplätze: Vorstellungsvideo auf der Startseite und Unterrichtsaufzeichnung in Muestra 4. |
 | Zeilen, Aufzählungspunkte, ganze Muestras | Hineinklicken – oben rechts erscheinen **Duplizieren** und **Löschen**. So entstehen weitere Tabellenzeilen oder eine fünfte Muestra, ohne HTML anzufassen. |
 | Abschnitt umbenennen | Beim Ändern einer Überschrift schreibt sich der Eintrag im Inhaltsverzeichnis automatisch mit. |
 
@@ -166,7 +167,7 @@ Einrichtungsaufwand allerdings größer als der Nutzen.
 
 | Kriterium | Punkte | Wo im Paket |
 |---|---|---|
-| Punto de partida | 7 | Abschnitt 01: Ziele, Selbstbild, Vorerfahrung, Stärken/Sorgen, Audio-Reflexion |
+| Punto de partida | 7 | Startseite (Vorstellungsvideo) und Abschnitt 01: Ziele, Selbstbild, Vorerfahrung, Stärken/Sorgen, Audio-Reflexion |
 | Observación de clases | 10 | Abschnitt 03: Stundenübersicht, Muestra 1 (Beobachtungsbogen), Muestra 2 (Soziogramm), je mit `anclaje teórico` |
 | Impartición de clases | 10 | Abschnitt 04: Sitzungsübersicht, Muestra 3 (Planung + Material), Muestra 4 (Aufzeichnung + Dreifachvergleich + Tutor-Feedback) |
 | Reflexión de cierre | 7 | Abschnitt 05: Selbstevaluation und Entwicklungsplan mit drei konkreten Vorhaben |

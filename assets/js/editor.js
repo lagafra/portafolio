@@ -18,7 +18,8 @@
 
   var EDITABLES = [
     ".portada__titulo", ".portada__entrada", ".portada__cintillo",
-    ".pregunta-guia", ".identificacion dt", ".identificacion dd",
+    ".pregunta-guia", ".portada__video p",
+    ".identificacion dt", ".identificacion dd",
     ".indice__pie",
     ".contenido p", ".contenido li", ".contenido h2", ".contenido h3",
     ".contenido h4", ".contenido td", ".contenido th", ".contenido caption",

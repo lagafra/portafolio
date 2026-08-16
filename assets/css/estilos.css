@@ -198,6 +198,23 @@ a:hover { color: var(--rosa); text-decoration-color: var(--rosa); }
   color: var(--gris-claro);
 }
 
+/* Vídeo de presentación en la portada */
+.portada__video {
+  margin: 0 0 2.8rem;
+}
+.portada__rotulo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  margin: 0 0 0.8rem;
+}
+.portada__video .fuente {
+  margin-top: 0.8rem;
+  line-height: 1.7;
+}
+
 /* Datos de la portada */
 .identificacion {
   display: grid;
