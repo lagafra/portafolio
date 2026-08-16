@@ -1,0 +1,165 @@
+# Portafolio M07 – Anleitung
+
+## 1. Funktioniert die Idee?
+
+**Ja, aber nicht so, wie man es zuerst vermutet.** Google Sites kann kein eigenes
+Theme aus HTML/CSS/JS laden. Es gibt keinen Ort, an dem man Template-Dateien
+hochlädt. Was Google Sites bietet, ist der Block **Einfügen → Einbetten**, und der
+hat zwei Reiter:
+
+| Reiter | Was er macht | Taugt für dieses Paket? |
+|---|---|---|
+| **Einbettungscode** | Eigenes HTML/CSS/JS wird in einen abgeschotteten iframe gepackt | Nur für kleine Snippets – ein komplettes Portfolio ist dafür zu groß |
+| **Nach URL** | Bindet eine fremde Seite als iframe ein | **Ja – das ist der Weg** |
+
+Die Seite lebt also auf einem eigenen (kostenlosen) Hosting, und Google Sites ist
+nur noch der Rahmen, der laut Modulvorgabe verlangt wird. Das ist regelkonform:
+im Modulblatt steht ausdrücklich, dass jedes geeignete digitale Werkzeug erlaubt
+ist und Google Sites nur eine Empfehlung ist. Abgegeben wird ohnehin ein
+einseitiges PDF mit dem **Link** zum eportfolio.
+
+### Was dabei nicht geht – ehrlich vorab
+
+- **Die Google-Sites-Kopfzeile bleibt sichtbar.** Sie lässt sich klein machen
+  (Theme „Simple", weiß, Kopfzeilentyp „Nur Titel" oder Banner ohne Bild), aber
+  nicht ganz entfernen. Das Design ist so gebaut, dass ein weißer Sites-Header
+  darüber nicht stört.
+- **Die iframe-Höhe ist fest.** Der eingebettete Bereich scrollt intern. Deshalb
+  hat die Seite eine eigene Navigation und einen Lesefortschritt-Balken oben –
+  beides ist genau für diese Situation gemacht.
+- **Interne Sprungmarken ändern die Adresse der Elternseite nicht.** Ein Link auf
+  „Muestra 3" funktioniert im iframe, lässt sich aber nicht extern verschicken.
+- **Die Sites-interne Suche findet eingebetteten Inhalt nicht.** Für ein Portfolio
+  irrelevant.
+
+---
+
+## 2. Einrichtung in fünf Schritten
+
+### Schritt 1 – Inhalte einsetzen
+Alle Platzhalter im HTML sind mit `class="marcador"` markiert und im Browser rosa
+hinterlegt. Suchen nach `marcador`, Text ersetzen, danach das `class="marcador"`
+entfernen (oder den Span ganz auflösen). Wenn am Ende nichts mehr rosa
+hinterlegt ist, ist nichts vergessen worden.
+
+Aktuell: **145 Platzhalter**.
+
+### Schritt 2 – Eigene Medien einsetzen
+- **Bilder:** eigene Dateien nach `assets/img/` legen und im HTML den `src` ändern.
+  Die vier mitgelieferten SVGs sind nur Attrappen und tragen unten rechts den
+  Hinweis „IMAGEN DE EJEMPLO – SUSTITUIR".
+- **Audio:** eigene Aufnahmen nach `assets/audio/` (die beiden mitgelieferten
+  MP3s sind stumm). Format egal, `src` anpassen.
+- **Video:** in `Muestra 4` den Block `<p class="video__aviso">…</p>` durch den
+  iframe ersetzen, z. B.
+  `<iframe src="https://www.youtube.com/embed/VIDEO-ID" title="Fragmento de la sesión" allowfullscreen loading="lazy"></iframe>`
+
+### Schritt 3 – Hochladen
+Den gesamten Ordner `portafolio/` auf einen statischen Host legen. Zwei einfache
+Wege:
+
+- **GitHub Pages** – Repository anlegen, Ordnerinhalt hochladen, unter
+  *Settings → Pages* die Quelle auf den Branch stellen. Ergebnis:
+  `https://benutzername.github.io/portafolio/`. Dauerhaft und kostenlos.
+- **Netlify Drop** – Ordner auf die Seite ziehen, URL kommt sofort. Schneller,
+  aber ohne Konto nur temporär.
+
+Danach die URL im Browser öffnen und prüfen, ob alles lädt.
+
+### Schritt 4 – In Google Sites einbetten
+1. Neue Google-Sites-Seite anlegen, Theme möglichst neutral (weiß).
+2. Kopfzeilentyp auf „Nur Titel" stellen.
+3. **Einfügen → Einbetten → Nach URL** → eigene URL → **Ganze Seite**.
+4. Den Block auf volle Seitenbreite ziehen und in der Höhe so weit aufziehen wie
+   möglich (ca. 1200–1600 px sind angenehm).
+
+Alternativ über **Einbettungscode** mit voller Kontrolle:
+
+```html
+<iframe src="https://benutzername.github.io/portafolio/"
+        title="Portafolio de prácticas docentes M07"
+        style="width:100%;height:1400px;border:0"></iframe>
+```
+
+> Bleibt der Bereich leer, blockiert der Host das Einbetten
+> (`X-Frame-Options`). GitHub Pages und Netlify tun das nicht.
+
+### Schritt 5 – Abgabe
+Einseitiges PDF auf mySDI hochladen mit: persönlichen Daten, Modulname und
+-nummer, Abgabedatum und **Link zum eportfolio** – und zwar zur Google-Sites-URL,
+nicht zur Hosting-URL.
+
+---
+
+## 3. Fallstricke, die Punkte kosten können
+
+- **Das Datum der letzten Bearbeitung muss im Portfolio sichtbar sein und darf
+  nicht nach dem Abgabetermin liegen.** Es steht deshalb an zwei Stellen fest
+  im HTML (Seitenleiste und Fußzeile) und wird **bewusst nicht** per JavaScript
+  erzeugt: ein automatisches Datum würde beim Öffnen nach dem Abgabetermin ein zu
+  spätes Datum anzeigen. Nach der Abgabe nichts mehr ändern.
+- **Datenschutz.** Auf einem öffentlichen Host ist alles öffentlich. Deshalb:
+  keine Namen und keine erkennbaren Personen in den Dateien, das Video als „nicht
+  gelistet" bzw. mit eingeschränktem Zugriff, und schriftliche Einwilligungen
+  einholen. Die Seite trägt bereits `<meta name="robots" content="noindex">`.
+- **Multimodalität ist ein eigenes Bewertungskriterium.** Text, Bild, Video *und*
+  Audio müssen wirklich vorkommen – die Struktur hat für jedes einen Platz.
+- **Quellenangaben.** Jede Abbildung hat eine `<span class="fuente">`-Zeile, und
+  Abschnitt 06 sammelt Literatur und Medienrechte. Die Literaturliste enthält
+  Standardwerke als Ausgangspunkt; sie muss an die tatsächlich zitierten Stellen
+  angepasst und vor der Abgabe geprüft werden.
+- **Grammatisches Geschlecht.** Die Texte sind weitgehend geschlechtsneutral
+  formuliert („docente", „persona docente"). An den wenigen markierten Stellen
+  bitte an die eigene Form anpassen.
+
+---
+
+## 4. Aufbau nach dem Bewertungsraster (40 Punkte)
+
+| Kriterium | Punkte | Wo im Paket |
+|---|---|---|
+| Punto de partida | 7 | Abschnitt 01: Ziele, Selbstbild, Vorerfahrung, Stärken/Sorgen, Audio-Reflexion |
+| Observación de clases | 10 | Abschnitt 03: Stundenübersicht, Muestra 1 (Beobachtungsbogen), Muestra 2 (Soziogramm), je mit `anclaje teórico` |
+| Impartición de clases | 10 | Abschnitt 04: Sitzungsübersicht, Muestra 3 (Planung + Material), Muestra 4 (Aufzeichnung + Dreifachvergleich + Tutor-Feedback) |
+| Reflexión de cierre | 7 | Abschnitt 05: Selbstevaluation und Entwicklungsplan mit drei konkreten Vorhaben |
+| Presentación del e-portfolio | 6 | Navigation, Lesefortschritt, Multimodalität, Quellen, sauberer Satz |
+
+Zusätzlich ist Abschnitt 02 (Kontext des Praktikums) eingebaut. Er wird nicht
+eigens bepunktet, macht die Muestras aber nachvollziehbar.
+
+---
+
+## 5. Dateien
+
+```
+portafolio/
+├── index.html                 die Seite
+├── ANLEITUNG.md               diese Datei
+└── assets/
+    ├── css/estilos.css        gesamtes Design
+    ├── js/portafolio.js       Navigation, Fortschritt, Bildbetrachter
+    ├── img/*.svg              vier Platzhalter-Abbildungen
+    └── audio/*.mp3            zwei stumme Platzhalter
+```
+
+Dazu `portafolio-archivo-unico.html`: dieselbe Seite als **eine einzige Datei**
+(CSS, JS und Bilder eingebettet). Praktisch als Backup, zum Weitergeben oder für
+den PDF-Ausdruck (`Strg+P` – dafür gibt es ein eigenes Druck-Stylesheet). Für das
+Einbettungscode-Feld von Google Sites ist sie mit rund 100 KB zu groß.
+
+---
+
+## 6. Technisches
+
+- Kein Framework, keine Build-Schritte, keine externen Abhängigkeiten außer den
+  Schriften von Google Fonts (Fraunces, Karla, IBM Plex Mono). Fallen die aus,
+  greifen systemeigene Ersatzschriften – das Layout bleibt stabil.
+- Getestet mit Chromium bei 1280 px und 390 px Breite: kein horizontales
+  Überlaufen, keine JS-Fehler, Navigation markiert in allen sechs Abschnitten den
+  richtigen Eintrag.
+- Barrierefreiheit: Sprungmarke zum Inhalt, sichtbarer Tastaturfokus,
+  `alt`-Texte, scrollbare Tabellen mit Tastaturzugriff, `prefers-reduced-motion`
+  wird respektiert.
+- Farben: `--nieve #fcf7f8`, `--rosa-velo #f7e8ec`, `--rosa-linea #ecd0d8`,
+  `--rosa #c0577a`, `--rosa-tinta #8a2e4c`, `--tinta #221a1d`. Alle zentral in
+  `:root` – eine Änderung dort färbt die ganze Seite um.

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Plano del aula con las mesas dispuestas en U">
+<title>Plano del aula con las mesas dispuestas en U</title>
+<rect width="1200" height="750" fill="#ffffff"/>
+<rect x="40" y="40" width="1120" height="670" fill="#fcf7f8" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="420" y="70" width="360" height="26" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<text x="600" y="128" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="20" fill="#c0577a" letter-spacing="3">PIZARRA</text>
+<rect x="300" y="210" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="343" cy="290" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="405" y="210" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="448" cy="290" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="510" y="210" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="553" cy="290" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="615" y="210" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="658" cy="290" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="720" y="210" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="763" cy="290" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="825" y="210" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="868" cy="290" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="235" y="300" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="278" cy="380" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="235" y="392" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="278" cy="472" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="235" y="484" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="278" cy="564" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="235" y="576" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="278" cy="656" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="880" y="300" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="923" cy="380" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="880" y="392" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="923" cy="472" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="880" y="484" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="923" cy="564" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="880" y="576" width="86" height="52" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="923" cy="656" r="15" fill="#f7e8ec" stroke="#ecd0d8" stroke-width="2"/>
+<rect x="545" y="300" width="110" height="58" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<text x="600" y="336" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="16" fill="#8a2e4c">DOCENTE</text>
+<text x="72" y="90" font-family="IBM Plex Mono, Consolas, monospace" font-size="22" fill="#8a2e4c" letter-spacing="3">PLANO DEL AULA · DISPOSICIÓN EN U</text>
+<text x="1172" y="726" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="18" fill="#9a8b91" letter-spacing="2">IMAGEN DE EJEMPLO — SUSTITUIR</text>
+</svg>
