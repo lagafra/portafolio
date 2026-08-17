@@ -188,6 +188,19 @@
     return url;
   }
 
+  function marcaDeVideo(url, caja) {
+    var poster = caja.querySelector("video");
+    poster = poster ? poster.getAttribute("poster") : null;
+    if (/\.(mp4|webm|ogv|mov)(\?.*)?$/i.test(url)) {
+      return '<video controls preload="none" playsinline' +
+        (poster ? ' poster="' + poster + '"' : "") +
+        ' src="' + url + '">Tu navegador no reproduce vídeo. ' +
+        '<a href="' + url + '">Descargar el vídeo</a>.</video>';
+    }
+    return '<iframe src="' + aEmbebido(url) +
+      '" title="Vídeo del portafolio" allowfullscreen loading="lazy"></iframe>';
+  }
+
   function prepararMedios(raiz) {
     raiz.querySelectorAll(".video").forEach(function (caja) {
       if (caja.dataset.editorMedio) return;
@@ -201,9 +214,7 @@
           actual ? actual.getAttribute("src") : ""
         );
         if (!url) return;
-        caja.innerHTML =
-          '<iframe src="' + aEmbebido(url.trim()) +
-          '" title="Fragmento de la sesión" allowfullscreen loading="lazy"></iframe>';
+        caja.innerHTML = marcaDeVideo(url.trim(), caja);
         marcarSucio();
       }));
     });

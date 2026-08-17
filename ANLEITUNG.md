@@ -53,9 +53,11 @@ Von Hand geht es so:
   Hinweis „IMAGEN DE EJEMPLO – SUSTITUIR".
 - **Audio:** eigene Aufnahmen nach `assets/audio/` (die beiden mitgelieferten
   MP3s sind stumm). Format egal, `src` anpassen.
-- **Video:** es gibt zwei Videoplätze – das Vorstellungsvideo auf der Startseite
-  (`.portada__video`) und die Unterrichtsaufzeichnung in `Muestra 4`. Jeweils den
-  Block `<p class="video__aviso">…</p>` durch den iframe ersetzen, z. B.
+- **Video:** es gibt zwei Videoplätze. Das **Vorstellungsvideo** auf der
+  Startseite ist bereits eingebaut (`assets/video/presentacion.mp4`, im
+  Hochformat 9:16, mit Standbild aus Sekunde 1). Die **Unterrichtsaufzeichnung**
+  in `Muestra 4` fehlt noch: dort den Block `<p class="video__aviso">…</p>` durch
+  den iframe ersetzen, z. B.
   `<iframe src="https://www.youtube.com/embed/VIDEO-ID" title="Fragmento de la sesión" allowfullscreen loading="lazy"></iframe>`
 
 ### Schritt 3 – Hochladen
@@ -113,7 +115,7 @@ erscheint eine kurze Erklärung.
 | Text ändern | Auf einen beliebigen Text klicken und schreiben. Enter erzeugt einen Zeilenumbruch, das Layout bleibt heil. Eingefügter Text kommt immer als reiner Text an – Word-Formatierungen können nichts zerstören. |
 | Platzhalter abhaken | Die rosa Kästchen verlieren ihre Markierung automatisch, sobald der Text ersetzt ist. Unten links steht durchgehend, wie viele noch offen sind. |
 | Bilder tauschen | Auf ein Bild klicken, Datei auswählen. Fotos werden vor dem Einbetten automatisch auf 1600 px verkleinert, damit die Datei nicht aufgebläht wird; danach fragt der Editor nach dem Alternativtext. |
-| Video und Audio | Der Knopf unter dem jeweiligen Block fragt nach der Adresse. YouTube- und Google-Drive-Links werden selbst in die richtige Einbettungsform umgeschrieben. Das gilt für beide Videoplätze: Vorstellungsvideo auf der Startseite und Unterrichtsaufzeichnung in Muestra 4. |
+| Video und Audio | Der Knopf unter dem jeweiligen Block fragt nach der Adresse. Endet sie auf `.mp4`, `.webm` oder `.mov`, entsteht ein direkt eingebundenes Video; bei YouTube- und Google-Drive-Links wird die richtige Einbettungsform erzeugt. Das gilt für beide Videoplätze: Vorstellungsvideo auf der Startseite und Unterrichtsaufzeichnung in Muestra 4. |
 | Zeilen, Aufzählungspunkte, ganze Muestras | Hineinklicken – oben rechts erscheinen **Duplizieren** und **Löschen**. So entstehen weitere Tabellenzeilen oder eine fünfte Muestra, ohne HTML anzufassen. |
 | Abschnitt umbenennen | Beim Ändern einer Überschrift schreibt sich der Eintrag im Inhaltsverzeichnis automatisch mit. |
 
@@ -147,6 +149,11 @@ Einrichtungsaufwand allerdings größer als der Nutzen.
   im HTML (Seitenleiste und Fußzeile) und wird **bewusst nicht** per JavaScript
   erzeugt: ein automatisches Datum würde beim Öffnen nach dem Abgabetermin ein zu
   spätes Datum anzeigen. Nach der Abgabe nichts mehr ändern.
+- **Das Vorstellungsvideo liegt im Paket selbst.** Die Originaldatei hatte
+  140 MB und wäre an GitHubs 100-MB-Grenze pro Datei gescheitert. Sie ist auf
+  720 × 1280 und 19 MB umgerechnet (H.264/AAC, `faststart`, also
+  streamingfähig) – bei einer Anzeigebreite von rund 260 px sichtbar
+  verlustfrei. Das Original bitte trotzdem aufheben.
 - **Datenschutz.** Auf einem öffentlichen Host ist alles öffentlich. Deshalb:
   keine Namen und keine erkennbaren Personen in den Dateien, das Video als „nicht
   gelistet" bzw. mit eingeschränktem Zugriff, und schriftliche Einwilligungen
@@ -190,11 +197,14 @@ portafolio/
     ├── js/portafolio.js       Navigation, Fortschritt, Bildbetrachter
     ├── js/editor.js           Bearbeiten auf der gerenderten Seite
     ├── img/*.svg              vier Platzhalter-Abbildungen
+    ├── img/presentacion-poster.jpg  Standbild des Vorstellungsvideos
+    ├── video/presentacion.mp4 Vorstellungsvideo (19 MB, 9:16)
     └── audio/*.mp3            zwei stumme Platzhalter
 ```
 
 Dazu `portafolio-archivo-unico.html`: dieselbe Seite als **eine einzige Datei**
-(CSS, JS und Bilder eingebettet). Praktisch als Backup, zum Weitergeben oder für
+(CSS, JS und Bilder eingebettet; Video und Audio bleiben extern und brauchen den
+`assets`-Ordner daneben). Praktisch als Backup, zum Weitergeben oder für
 den PDF-Ausdruck (`Strg+P` – dafür gibt es ein eigenes Druck-Stylesheet). Für das
 Einbettungscode-Feld von Google Sites ist sie mit rund 100 KB zu groß.
 

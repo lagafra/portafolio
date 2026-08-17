@@ -43,22 +43,23 @@
 
     <div class="portada__video">
       <p class="portada__rotulo">Vídeo de presentación</p>
-      <div class="video">
-        <!-- Sustituir por el iframe del vídeo de presentación.
-             Ejemplo: <iframe src="https://www.youtube.com/embed/ID"
-                      title="Presentación del portafolio" allowfullscreen loading="lazy"></iframe>
-             En modo edición basta con pulsar «Cambiar el vídeo». -->
-        <p class="video__aviso">
-          Aquí va el vídeo de presentación<br>
-          [sustituir este bloque por el iframe del vídeo]
+      <div class="portada__video__fila">
+        <div class="video video--vertical">
+          <video controls preload="none"
+                 poster="assets/img/presentacion-poster.jpg"
+                 playsinline
+                 src="assets/video/presentacion.mp4">
+            Tu navegador no reproduce vídeo.
+            <a href="assets/video/presentacion.mp4">Descargar el vídeo</a>.
+          </video>
+        </div>
+        <p class="fuente">
+          Grabación propia, 4 min. Me presento, cuento en qué momento de mi
+          formación docente estoy y explico cómo está organizado este portafolio.
+          <span class="marcador">[Añadir aquí, si procede: condiciones de acceso
+          al vídeo.]</span>
         </p>
       </div>
-      <p class="fuente">
-        Grabación propia de <span class="marcador">[duración]</span>. Presento el
-        centro de prácticas, el recorrido de estas semanas y cómo está organizado
-        este portafolio. Alojado como
-        <span class="marcador">[no listado / con acceso restringido]</span>.
-      </p>
     </div>
 
     <dl class="identificacion">
@@ -997,7 +998,7 @@
             <tr>
               <td>Vídeo · Presentación del portafolio</td>
               <td>Grabación propia</td>
-              <td>—</td>
+              <td>Alojado en el propio portafolio</td>
             </tr>
             <tr>
               <td>Vídeo · Fragmento de sesión</td>
