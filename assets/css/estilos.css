@@ -508,6 +508,24 @@ a:hover { color: var(--rosa); text-decoration-color: var(--rosa); }
   color: var(--gris-claro);
 }
 
+/* Texto con figura al lado (oferta del centro) */
+.contexto__oferta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.4rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.contexto__oferta__texto {
+  flex: 1 1 20rem;
+  min-width: 0;
+}
+.figura--lateral {
+  flex: 0 1 15rem;
+  margin: 0.4rem 0 1.2rem;
+}
+.figura--lateral figcaption { font-size: 0.875rem; }
+
 .video {
   position: relative;
   width: 100%;

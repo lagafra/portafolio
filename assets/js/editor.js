@@ -25,6 +25,7 @@
     ".contenido h4", ".contenido td", ".contenido th", ".contenido caption",
     ".contenido dt", ".contenido dd", ".contenido summary",
     ".contenido figcaption", ".contenido .ficha__titulo",
+    ".contexto__oferta p",
     ".pie__interior p"
   ].join(", ");
 
