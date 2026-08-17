@@ -254,12 +254,15 @@
 
   /* --- Controles de bloque (duplicar / eliminar) ------------- */
   function bloqueDe(el) {
-    return el.closest("tbody tr, .contenido li, article.ficha");
+    return el.closest(
+      "tbody tr, .contenido li, article.ficha, .identificacion > div, .datos > div"
+    );
   }
 
   function nombreDe(nodo) {
     if (nodo.matches("tbody tr")) return "esta fila";
     if (nodo.matches("article.ficha")) return "esta muestra completa";
+    if (nodo.matches(".identificacion > div, .datos > div")) return "este dato";
     return "este elemento";
   }
 
@@ -344,6 +347,18 @@
         e.removeAttribute("data-editor-medio");
       }
     );
+
+    // El visor de imágenes se guarda siempre vacío y cerrado.
+    var visorClon = clon.querySelector(".visor");
+    if (visorClon) {
+      visorClon.classList.remove("abierto");
+      visorClon.setAttribute("aria-hidden", "true");
+      var imgClon = visorClon.querySelector("img");
+      if (imgClon) {
+        imgClon.setAttribute("src", "");
+        imgClon.setAttribute("alt", "");
+      }
+    }
 
     clon.classList.remove("editor-modo");
     if (clon.getAttribute("class") === "") clon.removeAttribute("class");

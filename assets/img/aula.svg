@@ -1,68 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" role="img" aria-label="Plano del aula: pizarra y escritorio del docente en la cabecera, seis mesas centrales orientadas hacia el frente y tres mesas laterales orientadas hacia el centro del aula.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 748 1040" width="748" height="1040" role="img" aria-label="Plano del aula: pizarra a lo ancho de la pared frontal, escritorio del docente, tres bloques de mesas centrales orientadas hacia el frente y mesas perimetrales en forma de U (pared izquierda, pared del fondo y pared derecha) cuyo alumnado mira hacia el centro del aula.">
 <title>Distribución del aula del centro de prácticas</title>
-<rect width="1200" height="860" fill="#ffffff"/>
-<rect x="70" y="100" width="1060" height="660" rx="4" fill="#fcf7f8" stroke="#ecd0d8" stroke-width="2"/>
+<rect width="748" height="1040" fill="#ffffff"/>
+<rect x="70" y="100" width="608" height="832" rx="4" fill="#fcf7f8" stroke="#ecd0d8" stroke-width="2"/>
 <text x="70" y="62" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="24" fill="#8a2e4c" letter-spacing="3" font-weight="normal">DISTRIBUCIÓN DEL AULA</text>
-<text x="70" y="84" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">Mesas fijas: el alumnado de los laterales mira al centro; el de las mesas centrales, al frente.</text>
-<rect x="410" y="124" width="380" height="26" rx="2" fill="#c0577a"/>
-<text x="600" y="142" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="15" fill="#ffffff" letter-spacing="3" font-weight="normal">PIZARRA</text>
-<rect x="520" y="182" width="160" height="46" rx="3" fill="#ffffff" stroke="#8a2e4c" stroke-width="2"/>
-<text x="600" y="211" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#8a2e4c" letter-spacing="2" font-weight="normal">ESCRITORIO</text>
-<rect x="400" y="286" width="250" height="62" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
-<circle cx="462" cy="363" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="525" cy="363" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="588" cy="363" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="525,259 518,273 532,273" fill="#c0577a"/>
-<rect x="690" y="286" width="150" height="62" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
-<circle cx="740" cy="363" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="790" cy="363" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="765,259 758,273 772,273" fill="#c0577a"/>
-<rect x="400" y="412" width="250" height="62" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
-<circle cx="462" cy="489" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="525" cy="489" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="588" cy="489" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="525,385 518,399 532,399" fill="#c0577a"/>
-<rect x="690" y="412" width="150" height="62" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
-<circle cx="740" cy="489" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="790" cy="489" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="765,385 758,399 772,399" fill="#c0577a"/>
-<rect x="400" y="538" width="250" height="62" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
-<circle cx="462" cy="615" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="525" cy="615" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="588" cy="615" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="525,511 518,525 532,525" fill="#c0577a"/>
-<rect x="690" y="538" width="150" height="62" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
-<circle cx="740" cy="615" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="790" cy="615" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="765,511 758,525 772,525" fill="#c0577a"/>
-<rect x="132" y="280" width="68" height="380" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
-<circle cx="215" cy="356" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="215" cy="432" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="215" cy="508" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="215" cy="584" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="261,470 247,463 247,477" fill="#c0577a"/>
-<rect x="1000" y="280" width="68" height="320" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
-<circle cx="985" cy="344" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="985" cy="408" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="985" cy="472" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="985" cy="536" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="939,440 953,433 953,447" fill="#c0577a"/>
-<rect x="400" y="672" width="440" height="60" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
-<circle cx="488" cy="747" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="576" cy="747" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="664" cy="747" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<circle cx="752" cy="747" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<polygon points="620,645 613,659 627,659" fill="#c0577a"/>
-<line x1="600" y1="228" x2="600" y2="252" stroke="#c0577a" stroke-width="2" stroke-dasharray="6 7" stroke-opacity="0.55"/>
-<rect x="336" y="252" width="568" height="384" rx="24" fill="none" stroke="#c0577a" stroke-width="2" stroke-dasharray="6 7" stroke-opacity="0.55"/>
-<rect x="70" y="806" width="26" height="15" rx="2" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
-<text x="106" y="819" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">mesas centrales (miran al frente)</text>
-<rect x="400" y="806" width="26" height="15" rx="2" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
-<text x="436" y="819" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">mesas laterales (miran al centro)</text>
-<circle cx="736" cy="813" r="8" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
-<text x="754" y="819" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">alumnado</text>
-<polygon points="858,804 851,818 865,818" fill="#c0577a"/>
-<text x="874" y="819" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">orientación</text>
-<line x1="984" y1="813" x2="1020" y2="813" stroke="#c0577a" stroke-width="2" stroke-dasharray="6 7" stroke-opacity="0.55"/>
-<text x="1030" y="819" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">el docente circula</text>
+<text x="70" y="84" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" fill="#9a8b91" letter-spacing="0" font-weight="normal">Mesas fijas: los laterales miran al centro; las mesas centrales, al frente.</text>
+<rect x="78" y="108" width="592" height="52" rx="2" fill="#c0577a"/>
+<text x="374" y="140" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="15" fill="#ffffff" letter-spacing="3" font-weight="normal">PIZARRA</text>
+<rect x="299" y="176" width="150" height="40" rx="3" fill="#ffffff" stroke="#8a2e4c" stroke-width="2"/>
+<text x="374" y="201" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" fill="#8a2e4c" letter-spacing="2" font-weight="normal">ESCRITORIO</text>
+<rect x="223" y="244" width="190" height="104" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<rect x="429" y="244" width="81" height="104" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<circle cx="286" cy="368" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="350" cy="368" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="470" cy="368" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<polygon points="318,225 311,239 325,239" fill="#c0577a"/>
+<polygon points="470,225 463,239 477,239" fill="#c0577a"/>
+<rect x="223" y="402" width="190" height="104" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<rect x="429" y="402" width="81" height="104" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<circle cx="286" cy="526" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="350" cy="526" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="470" cy="526" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<polygon points="318,383 311,397 325,397" fill="#c0577a"/>
+<polygon points="470,383 463,397 477,397" fill="#c0577a"/>
+<rect x="223" y="570" width="190" height="104" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<rect x="429" y="570" width="81" height="104" rx="3" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<circle cx="286" cy="694" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="350" cy="694" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="470" cy="694" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<polygon points="318,551 311,565 325,565" fill="#c0577a"/>
+<polygon points="470,551 463,565 477,565" fill="#c0577a"/>
+<rect x="95" y="244" width="104" height="680" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="82" cy="293" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="82" cy="390" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="82" cy="487" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="82" cy="584" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="82" cy="681" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="82" cy="778" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="82" cy="875" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<polygon points="195,632 181,625 181,639" fill="#c0577a"/>
+<rect x="545" y="244" width="104" height="567" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="663" cy="291" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="663" cy="386" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="663" cy="480" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="663" cy="575" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="663" cy="669" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="663" cy="764" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<polygon points="549,622 563,615 563,629" fill="#c0577a"/>
+<rect x="199" y="812" width="450" height="90" rx="3" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<circle cx="244" cy="917" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="334" cy="917" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="424" cy="917" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="514" cy="917" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<circle cx="604" cy="917" r="9" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<polygon points="424,824 417,838 431,838" fill="#c0577a"/>
+<path d="M211 240 L211 771 Q211 795 235 795 L503 795 Q527 795 527 771 L527 240" fill="none" stroke="#c0577a" stroke-width="2" stroke-dasharray="6 7" stroke-opacity="0.55" stroke-linecap="round"/>
+<rect x="70" y="961" width="26" height="15" rx="2" fill="#f7e8ec" stroke="#c0577a" stroke-width="2"/>
+<text x="106" y="974" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">mesas centrales (miran al frente)</text>
+<rect x="400" y="961" width="26" height="15" rx="2" fill="#ffffff" stroke="#ecd0d8" stroke-width="2"/>
+<text x="436" y="974" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">mesas laterales (miran al centro)</text>
+<circle cx="78" cy="1000" r="8" fill="#ffffff" stroke="#ecd0d8" stroke-width="1.5"/>
+<text x="96" y="1006" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">alumnado</text>
+<polygon points="200,992 193,1006 207,1006" fill="#c0577a"/>
+<text x="216" y="1006" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">orientación</text>
+<line x1="340" y1="1000" x2="376" y2="1000" stroke="#c0577a" stroke-width="2" stroke-dasharray="6 7" stroke-opacity="0.55"/>
+<text x="386" y="1006" text-anchor="start" font-family="IBM Plex Mono, Consolas, monospace" font-size="14" fill="#9a8b91" letter-spacing="0" font-weight="normal">el docente circula</text>
 </svg>
