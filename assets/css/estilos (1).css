@@ -1,0 +1,963 @@
+/* ============================================================
+   Portafolio de prácticas docentes — M07
+   Hoja de estilo única. Sistema: rosa / blanco, minimalista.
+   ============================================================ */
+
+/* --- 1. Fichas de diseño (tokens) --------------------------- */
+:root {
+  /* Color */
+  --blanco: #ffffff;
+  --nieve: #fcf7f8;
+  --rosa-velo: #f7e8ec;
+  --rosa-linea: #ecd0d8;
+  --rosa: #c0577a;
+  --rosa-tinta: #8a2e4c;
+  --tinta: #221a1d;
+  --gris: #6b5b62;
+  --gris-claro: #9a8b91;
+
+  /* Tipografía */
+  --display: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --texto: "Karla", "Helvetica Neue", Arial, sans-serif;
+  --dato: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* Escala */
+  --t-xxl: clamp(2.6rem, 7vw, 4.6rem);
+  --t-xl: clamp(1.9rem, 4vw, 2.7rem);
+  --t-l: clamp(1.3rem, 2.4vw, 1.6rem);
+  --t-m: 1.0625rem;
+  --t-s: 0.9375rem;
+  --t-xs: 0.75rem;
+
+  /* Ritmo */
+  --columna: 44rem;
+  --indice-ancho: 15rem;
+  --aire: clamp(3rem, 7vw, 6rem);
+  --radio: 3px;
+}
+
+/* --- 2. Base ------------------------------------------------ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--nieve);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: var(--t-m);
+  line-height: 1.72;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+video { max-width: 100%; display: block; }
+
+a {
+  color: var(--rosa-tinta);
+  text-decoration-color: var(--rosa-linea);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+a:hover { color: var(--rosa); text-decoration-color: var(--rosa); }
+
+:focus-visible {
+  outline: 2px solid var(--rosa);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.salta-al-contenido {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  z-index: 60;
+  background: var(--blanco);
+  color: var(--rosa-tinta);
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--rosa-linea);
+}
+.salta-al-contenido:focus {
+  width: auto;
+  height: auto;
+  padding: 0.7rem 1.1rem;
+  overflow: visible;
+  clip-path: none;
+  left: 0.75rem;
+  top: 0.75rem;
+}
+
+/* --- 3. Barra de progreso de lectura ------------------------ */
+.progreso {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  z-index: 50;
+}
+.progreso__barra {
+  height: 100%;
+  width: 0%;
+  background: var(--rosa);
+  transition: width 0.1s linear;
+}
+
+/* --- 4. Portada --------------------------------------------- */
+.portada {
+  background: var(--blanco);
+  border-bottom: 1px solid var(--rosa-linea);
+  padding: clamp(3.5rem, 9vw, 7rem) var(--aire) clamp(3rem, 7vw, 5rem);
+  position: relative;
+  overflow: hidden;
+}
+.portada::after {
+  content: "";
+  position: absolute;
+  right: -14rem;
+  top: -14rem;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--rosa-velo), transparent 68%);
+  pointer-events: none;
+}
+.portada__interior {
+  max-width: var(--columna);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.portada__cintillo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  margin: 0 0 1.6rem;
+}
+.portada__titulo {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 30, "WONK" 1;
+  font-weight: 400;
+  font-size: var(--t-xxl);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+}
+.portada__titulo em {
+  font-style: italic;
+  color: var(--rosa-tinta);
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+}
+.portada__entrada {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  color: var(--gris);
+  max-width: 34rem;
+  margin: 0 0 2.6rem;
+}
+
+/* Pregunta guía: el gesto característico del portafolio */
+.pregunta-guia {
+  margin: 0 0 2.8rem;
+  padding: 1.6rem 0 1.6rem 1.6rem;
+  border-left: 2px solid var(--rosa);
+  font-family: var(--display);
+  font-style: italic;
+  font-variation-settings: "SOFT" 60, "WONK" 1;
+  font-size: var(--t-l);
+  line-height: 1.35;
+  color: var(--tinta);
+}
+.pregunta-guia cite {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: var(--dato);
+  font-style: normal;
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+}
+
+/* Vídeo de presentación en la portada */
+.portada__video {
+  margin: 0 0 2.8rem;
+}
+.portada__rotulo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  margin: 0 0 0.9rem;
+}
+.portada__video__fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.4rem 1.8rem;
+}
+.portada__video .fuente {
+  flex: 1 1 15rem;
+  margin: 0.2rem 0 0;
+  line-height: 1.75;
+  text-transform: none;
+  letter-spacing: 0;
+}
+/* Datos de la portada */
+.identificacion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1.4rem 2rem;
+  margin: 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rosa-linea);
+}
+.identificacion dt {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  margin-bottom: 0.35rem;
+}
+.identificacion dd {
+  margin: 0;
+  font-size: var(--t-s);
+  line-height: 1.5;
+}
+
+/* --- 5. Disposición general --------------------------------- */
+.disposicion {
+  display: grid;
+  grid-template-columns: var(--indice-ancho) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 3rem);
+}
+
+/* --- 6. Índice lateral -------------------------------------- */
+.indice {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.indice__rotulo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  margin: 0 0 1.1rem;
+}
+.indice__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid var(--rosa-linea);
+}
+.indice__enlace {
+  display: block;
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin-left: -1px;
+  border-left: 2px solid transparent;
+  color: var(--gris);
+  text-decoration: none;
+  font-size: var(--t-s);
+  line-height: 1.35;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.indice__enlace:hover { color: var(--rosa-tinta); }
+.indice__enlace[aria-current="true"] {
+  color: var(--rosa-tinta);
+  border-left-color: var(--rosa);
+  font-weight: 600;
+}
+.indice__numero {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  color: var(--gris-claro);
+  margin-right: 0.5rem;
+}
+.indice__enlace[aria-current="true"] .indice__numero { color: var(--rosa); }
+
+.indice__pie {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rosa-linea);
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  line-height: 1.6;
+  color: var(--gris-claro);
+}
+
+/* Botón del índice (solo móvil) */
+.indice__boton {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: var(--blanco);
+  border: 1px solid var(--rosa-linea);
+  border-radius: var(--radio);
+  color: var(--rosa-tinta);
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+.indice__boton::after {
+  content: "+";
+  font-size: 1rem;
+  line-height: 1;
+}
+.indice__boton[aria-expanded="true"]::after { content: "–"; }
+
+/* --- 7. Contenido y secciones ------------------------------- */
+.contenido {
+  max-width: var(--columna);
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 0;
+}
+
+.seccion {
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+  border-bottom: 1px solid var(--rosa-linea);
+  margin-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+.seccion:last-of-type {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.seccion__cintillo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  margin: 0 0 0.9rem;
+}
+.seccion__cintillo::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rosa-linea);
+}
+
+.seccion__titulo {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 30, "WONK" 1;
+  font-weight: 400;
+  font-size: var(--t-xl);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 1rem;
+}
+.seccion__sumario {
+  color: var(--gris);
+  font-size: 1.05rem;
+  margin: 0 0 2.4rem;
+  max-width: 38rem;
+}
+
+.subtitulo {
+  font-family: var(--display);
+  font-variation-settings: "SOFT" 30;
+  font-weight: 600;
+  font-size: var(--t-l);
+  line-height: 1.25;
+  margin: 2.6rem 0 0.8rem;
+}
+.sub-subtitulo {
+  font-family: var(--texto);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  margin: 1.8rem 0 0.5rem;
+}
+
+.contenido p { margin: 0 0 1.1rem; }
+.contenido ul,
+.contenido ol { margin: 0 0 1.3rem; padding-left: 1.15rem; }
+.contenido li { margin-bottom: 0.5rem; }
+.contenido li::marker { color: var(--rosa); }
+
+/* Marcador de texto pendiente de sustituir */
+.marcador {
+  background: var(--rosa-velo);
+  box-shadow: 0 0 0 2px var(--rosa-velo);
+  border-radius: 2px;
+}
+
+/* --- 8. Ficha: la pieza que se repite ----------------------- */
+.ficha {
+  background: var(--blanco);
+  border: 1px solid var(--rosa-linea);
+  border-radius: var(--radio);
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  margin: 0 0 2rem;
+}
+.ficha__encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid var(--rosa-linea);
+}
+.ficha__etiqueta {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blanco);
+  background: var(--rosa);
+  padding: 0.25rem 0.55rem;
+  border-radius: 2px;
+}
+.ficha__titulo {
+  font-family: var(--display);
+  font-variation-settings: "SOFT" 30;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Tira de datos de la ficha */
+.datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 0 0 1.5rem;
+  padding: 0 0 1.4rem;
+  border-bottom: 1px dotted var(--rosa-linea);
+}
+.datos div { margin: 0; }
+.datos dt {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+}
+.datos dd {
+  margin: 0.2rem 0 0;
+  font-size: var(--t-s);
+  font-weight: 600;
+}
+
+/* --- 9. Multimodalidad: figuras, vídeo, audio --------------- */
+.figura {
+  margin: 1.8rem 0;
+}
+.figura__marco {
+  background: var(--rosa-velo);
+  border: 1px solid var(--rosa-linea);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.figura__marco img {
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+}
+/* Planos y esquemas en vertical: no deben ocupar toda la columna. */
+.figura__marco--vertical {
+  max-width: 25rem;
+  margin: 0 auto;
+}
+.figura figcaption {
+  margin-top: 0.7rem;
+  font-size: var(--t-s);
+  line-height: 1.55;
+  color: var(--gris);
+}
+.figura figcaption b { color: var(--tinta); font-weight: 600; }
+.fuente {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  color: var(--gris-claro);
+}
+
+/* Texto con figura al lado (oferta del centro) */
+.contexto__oferta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.4rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.contexto__oferta__texto {
+  flex: 1 1 20rem;
+  min-width: 0;
+}
+.figura--lateral {
+  flex: 0 1 15rem;
+  margin: 0.4rem 0 1.2rem;
+}
+.figura--lateral figcaption { font-size: 0.875rem; }
+
+.video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--rosa-velo);
+  border: 1px solid var(--rosa-linea);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.video iframe,
+.video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/* El vídeo de presentación está grabado en vertical: marco 9:16
+   y ancho contenido. Va después de .video para ganar en cascada. */
+.video--vertical {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  max-width: 16rem;
+  flex: 0 0 auto;
+  background: var(--tinta);
+}
+.video--vertical video { object-fit: cover; }
+
+.video__aviso {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.06em;
+  color: var(--rosa-tinta);
+}
+
+.audio {
+  background: var(--blanco);
+  border: 1px solid var(--rosa-linea);
+  border-radius: var(--radio);
+  padding: 1.2rem 1.4rem;
+  margin: 1.8rem 0;
+}
+.audio__rotulo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  margin: 0 0 0.75rem;
+}
+.audio audio { width: 100%; }
+.audio__pie {
+  margin: 0.75rem 0 0;
+  font-size: var(--t-s);
+  color: var(--gris);
+}
+
+/* --- 10. Reflexión: el bloque que evalúa el tutor ----------- */
+.reflexion {
+  background: var(--rosa-velo);
+  border-radius: var(--radio);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  margin: 1.8rem 0 0;
+}
+.reflexion__rotulo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rosa-tinta);
+  margin: 0 0 0.9rem;
+}
+.reflexion p:last-child { margin-bottom: 0; }
+
+/* Anclaje teórico */
+.anclaje {
+  border-left: 2px solid var(--rosa);
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  margin: 1.4rem 0;
+  font-size: var(--t-s);
+  color: var(--gris);
+}
+.anclaje strong { color: var(--tinta); }
+
+/* --- 11. Desplegables --------------------------------------- */
+.desplegable {
+  border-top: 1px solid var(--rosa-linea);
+  padding: 0.9rem 0;
+}
+.desplegable summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rosa-tinta);
+}
+.desplegable summary::-webkit-details-marker { display: none; }
+.desplegable summary::before {
+  content: "+";
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rosa-linea);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  color: var(--rosa);
+}
+.desplegable[open] summary::before { content: "–"; }
+.desplegable__cuerpo { padding-top: 1rem; }
+
+/* --- 12. Tablas --------------------------------------------- */
+.tabla-envoltura {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tabla-envoltura:focus-visible {
+  outline: 2px solid var(--rosa);
+  outline-offset: 4px;
+}
+.tabla {
+  width: 100%;
+  min-width: 30rem;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: var(--t-s);
+}
+.tabla caption {
+  text-align: left;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  padding-bottom: 0.7rem;
+}
+.tabla th,
+.tabla td {
+  text-align: left;
+  padding: 0.65rem 0.75rem 0.65rem 0;
+  border-bottom: 1px solid var(--rosa-linea);
+  vertical-align: top;
+}
+.tabla thead th {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rosa-tinta);
+  font-weight: 500;
+}
+
+/* --- 13. Dos columnas (fortalezas / inquietudes) ------------ */
+.par {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.2rem;
+  margin: 1.6rem 0;
+}
+.par__bloque {
+  background: var(--blanco);
+  border: 1px solid var(--rosa-linea);
+  border-radius: var(--radio);
+  padding: 1.3rem 1.4rem;
+}
+.par__bloque h4 {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  margin: 0 0 0.8rem;
+}
+.par__bloque ul { margin: 0; padding-left: 1.05rem; }
+.par__bloque li:last-child { margin-bottom: 0; }
+
+/* --- 14. Plan prospectivo ----------------------------------- */
+.plan { list-style: none; margin: 1.6rem 0 0; padding: 0; }
+.plan > li {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.3rem 0;
+  border-top: 1px solid var(--rosa-linea);
+  margin: 0;
+}
+.plan > li:last-child { border-bottom: 1px solid var(--rosa-linea); }
+.plan__indice {
+  font-family: var(--dato);
+  font-size: var(--t-s);
+  color: var(--rosa);
+  padding-top: 0.15rem;
+}
+.plan__meta {
+  font-family: var(--display);
+  font-variation-settings: "SOFT" 30;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0.2rem 0 0;
+}
+.plan__cuerpo p:last-child { margin-bottom: 0; }
+
+/* --- 15. Referencias ---------------------------------------- */
+.bibliografia { list-style: none; margin: 1.4rem 0 0; padding: 0; }
+.bibliografia li {
+  padding-left: 1.6rem;
+  text-indent: -1.6rem;
+  margin-bottom: 0.85rem;
+  font-size: var(--t-s);
+  line-height: 1.6;
+}
+
+/* --- 16. Pie ------------------------------------------------ */
+.pie {
+  background: var(--blanco);
+  border-top: 1px solid var(--rosa-linea);
+  margin-top: clamp(3rem, 8vw, 6rem);
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 5vw, 3rem);
+}
+.pie__interior {
+  max-width: 74rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  line-height: 1.8;
+  color: var(--gris-claro);
+}
+.pie__actualizacion { color: var(--rosa-tinta); }
+.pie strong { color: var(--tinta); font-weight: 500; }
+
+/* --- 17. Visor de imágenes ---------------------------------- */
+.visor {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(34, 26, 29, 0.86);
+}
+.visor[open],
+.visor.abierto { display: flex; }
+.visor img {
+  max-width: min(100%, 60rem);
+  max-height: 88vh;
+  width: auto;
+  border-radius: var(--radio);
+  background: var(--blanco);
+}
+.visor__cerrar {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--blanco);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* --- 18. Adaptación a pantallas pequeñas -------------------- */
+@media (max-width: 62rem) {
+  .disposicion {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .indice {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--nieve);
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--rosa-linea);
+    max-height: none;
+  }
+  .indice__boton { display: flex; }
+  .indice__rotulo { display: none; }
+  .indice__lista {
+    display: none;
+    margin-top: 0.9rem;
+    background: var(--blanco);
+    border: 1px solid var(--rosa-linea);
+    border-left-width: 1px;
+    border-radius: var(--radio);
+    padding: 0.5rem 0.9rem;
+  }
+  .indice__lista.desplegada { display: block; }
+  .indice__pie { display: none; }
+  .contenido { padding-top: 2.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* --- 19. Impresión (PDF de respaldo) ------------------------ */
+@media print {
+  .indice,
+  .progreso,
+  .visor,
+  .salta-al-contenido { display: none !important; }
+  body { background: #fff; font-size: 11pt; }
+  .disposicion { display: block; max-width: none; padding: 0; }
+  .contenido { max-width: none; }
+  .seccion { break-inside: auto; page-break-inside: auto; }
+  .ficha,
+  .reflexion { break-inside: avoid; }
+  .desplegable__cuerpo { display: block !important; }
+  a { color: inherit; text-decoration: none; }
+}
+
+/* --- 18. Ficha de observación: rol del profesor y del alumno ---
+   Tabla de cinco columnas usada en la Muestra 1 de observación.
+   ------------------------------------------------------------ */
+/* Estilos propios de esta ficha. Se apoyan en los tokens del portafolio. */
+.tabla--rol {
+  min-width: 38rem;
+  table-layout: fixed;
+  font-size: var(--t-xs);
+  line-height: 1.6;
+}
+.tabla--rol col.c-tiempo     { width: 14%; }
+.tabla--rol col.c-fase       { width: 22%; }
+.tabla--rol col.c-alumno     { width: 16%; }
+.tabla--rol col.c-profesor   { width: 25%; }
+.tabla--rol col.c-estrategia { width: 23%; }
+
+.tabla--rol th,
+.tabla--rol td {
+  padding: 0.6rem 0.65rem;
+  border-right: 1px solid var(--rosa-linea);
+}
+.tabla--rol th:last-child,
+.tabla--rol td:last-child { border-right: 0; }
+.tabla--rol thead th {
+  background: var(--rosa-velo);
+  border-bottom: 1px solid var(--rosa-linea);
+}
+.tabla--rol tbody tr:nth-child(even) { background: var(--blanco); }
+.tabla--rol td p { margin: 0 0 0.5rem; }
+.tabla--rol td p:last-child { margin-bottom: 0; }
+
+.rol-tiempo {
+  font-family: var(--dato);
+  letter-spacing: 0.02em;
+  color: var(--rosa-tinta);
+}
+
+/* Sustituye al recuadro amarillo del documento de Word. */
+.rol-pizarra {
+  margin: 0.7rem 0 0;
+  padding: 0.7rem 0.6rem;
+  background: var(--rosa-velo);
+  border: 1px dashed var(--rosa-linea);
+  border-radius: var(--radio);
+  font-family: var(--dato);
+  line-height: 1.9;
+  text-align: center;
+  color: var(--rosa-tinta);
+}
+
+/* Fragmento literal de la instrucción de la docente. */
+.rol-cita {
+  margin: 0.5rem 0;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--rosa);
+  font-style: italic;
+  color: var(--tinta);
+}
+
+.rol-ests { margin: 0; padding: 0; list-style: none; }
+.rol-ests li { position: relative; padding-left: 0.95rem; margin-bottom: 0.6rem; }
+.rol-ests li:last-child { margin-bottom: 0; }
+.rol-ests li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rosa);
+}
+
+.rol-nota {
+  margin: 1.2rem 0 0;
+  padding: 0.8rem 1rem;
+  background: var(--blanco);
+  border-left: 3px solid var(--rosa-linea);
+  border-radius: var(--radio);
+  font-size: var(--t-s);
+  color: var(--gris);
+}
+.rol-nota b { color: var(--tinta); font-weight: 600; }
+
+@media (max-width: 40rem) {
+  .tabla--rol th, .tabla--rol td { padding: 0.65rem 0.7rem; }
+}
