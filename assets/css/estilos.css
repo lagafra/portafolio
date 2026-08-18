@@ -873,3 +873,91 @@ a:hover { color: var(--rosa); text-decoration-color: var(--rosa); }
   .desplegable__cuerpo { display: block !important; }
   a { color: inherit; text-decoration: none; }
 }
+
+/* --- 18. Ficha de observación: rol del profesor y del alumno ---
+   Tabla de cinco columnas usada en la Muestra 1 de observación.
+   ------------------------------------------------------------ */
+/* Estilos propios de esta ficha. Se apoyan en los tokens del portafolio. */
+.tabla--rol {
+  min-width: 38rem;
+  table-layout: fixed;
+  font-size: var(--t-xs);
+  line-height: 1.6;
+}
+.tabla--rol col.c-tiempo     { width: 14%; }
+.tabla--rol col.c-fase       { width: 22%; }
+.tabla--rol col.c-alumno     { width: 16%; }
+.tabla--rol col.c-profesor   { width: 25%; }
+.tabla--rol col.c-estrategia { width: 23%; }
+
+.tabla--rol th,
+.tabla--rol td {
+  padding: 0.6rem 0.65rem;
+  border-right: 1px solid var(--rosa-linea);
+}
+.tabla--rol th:last-child,
+.tabla--rol td:last-child { border-right: 0; }
+.tabla--rol thead th {
+  background: var(--rosa-velo);
+  border-bottom: 1px solid var(--rosa-linea);
+}
+.tabla--rol tbody tr:nth-child(even) { background: var(--blanco); }
+.tabla--rol td p { margin: 0 0 0.5rem; }
+.tabla--rol td p:last-child { margin-bottom: 0; }
+
+.rol-tiempo {
+  font-family: var(--dato);
+  letter-spacing: 0.02em;
+  color: var(--rosa-tinta);
+}
+
+/* Sustituye al recuadro amarillo del documento de Word. */
+.rol-pizarra {
+  margin: 0.7rem 0 0;
+  padding: 0.7rem 0.6rem;
+  background: var(--rosa-velo);
+  border: 1px dashed var(--rosa-linea);
+  border-radius: var(--radio);
+  font-family: var(--dato);
+  line-height: 1.9;
+  text-align: center;
+  color: var(--rosa-tinta);
+}
+
+/* Fragmento literal de la instrucción de la docente. */
+.rol-cita {
+  margin: 0.5rem 0;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--rosa);
+  font-style: italic;
+  color: var(--tinta);
+}
+
+.rol-ests { margin: 0; padding: 0; list-style: none; }
+.rol-ests li { position: relative; padding-left: 0.95rem; margin-bottom: 0.6rem; }
+.rol-ests li:last-child { margin-bottom: 0; }
+.rol-ests li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rosa);
+}
+
+.rol-nota {
+  margin: 1.2rem 0 0;
+  padding: 0.8rem 1rem;
+  background: var(--blanco);
+  border-left: 3px solid var(--rosa-linea);
+  border-radius: var(--radio);
+  font-size: var(--t-s);
+  color: var(--gris);
+}
+.rol-nota b { color: var(--tinta); font-weight: 600; }
+
+@media (max-width: 40rem) {
+  .tabla--rol th, .tabla--rol td { padding: 0.65rem 0.7rem; }
+}
