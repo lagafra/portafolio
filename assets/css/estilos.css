@@ -643,22 +643,27 @@ a:hover { color: var(--rosa); text-decoration-color: var(--rosa); }
 }
 .desplegable summary::-webkit-details-marker { display: none; }
 .desplegable summary::before {
-  content: "+";
+  content: "";
   width: 1.15rem;
   height: 1.15rem;
   flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-align: center;
   border: 1px solid var(--rosa-linea);
   border-radius: 50%;
-  font-family: var(--dato);
-  font-size: 0.8rem;
-  color: var(--rosa);
+  /* Plus con dos barras dibujadas y centradas (independiente de la fuente) */
+  background-image:
+    linear-gradient(var(--rosa), var(--rosa)),
+    linear-gradient(var(--rosa), var(--rosa));
+  background-size: 0.5rem 1px, 1px 0.5rem;
+  background-position: center, center;
+  background-repeat: no-repeat;
 }
-.desplegable[open] summary::before { content: "–"; }
+.desplegable[open] summary::before {
+  /* Solo la barra horizontal: signo menos */
+  background-image: linear-gradient(var(--rosa), var(--rosa));
+  background-size: 0.5rem 1px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .desplegable__cuerpo { padding-top: 1rem; }
 
 /* --- 12. Tablas --------------------------------------------- */
@@ -966,54 +971,10 @@ a:hover { color: var(--rosa); text-decoration-color: var(--rosa); }
   .tabla--rol th, .tabla--rol td { padding: 0.65rem 0.7rem; }
 }
 
-/* --- 20. Objetivos del portafolio (tarjetas) ---------------- */
-.contenido ol.objetivos {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.1rem;
-  margin: 1.5rem 0 1.9rem;
-  padding: 0;
-}
-.contenido .objetivos > li {
-  margin: 0;
-  background: var(--blanco);
-  border: 1px solid var(--rosa-linea);
-  border-radius: var(--radio);
-  padding: 1.3rem 1.25rem 1.35rem;
-  display: flex;
-  flex-direction: column;
-}
-.contenido .objetivos > li::marker { content: none; }
-.objetivo__num {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.9rem;
-  height: 1.9rem;
-  border-radius: 50%;
-  background: var(--rosa);
-  color: var(--blanco);
-  font-family: var(--dato);
-  font-size: var(--t-s);
-  line-height: 1;
-  margin-bottom: 0.85rem;
-}
-.objetivo__titulo {
-  font-family: var(--display);
-  font-variation-settings: "SOFT" 30;
-  font-weight: 600;
-  font-size: 1.15rem;
-  line-height: 1.25;
-  color: var(--rosa-tinta);
-  margin: 0 0 0.55rem;
-}
-.objetivo__titulo strong { font-weight: 600; }
-.contenido .objetivos p {
-  margin: 0;
-  font-size: var(--t-s);
-  line-height: 1.6;
-}
-@media (max-width: 48rem) {
-  .contenido ol.objetivos { grid-template-columns: 1fr; }
+/* --- 20. Objetivos del portafolio (tres columnas) ---------- */
+.par--tres { grid-template-columns: repeat(3, 1fr); }
+.par__bloque > p { margin: 0; }
+.par__bloque > p + p { margin-top: 0.8rem; }
+@media (max-width: 46rem) {
+  .par--tres { grid-template-columns: 1fr; }
 }
