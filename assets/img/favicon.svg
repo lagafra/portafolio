@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gato">
+  <title>Gato</title>
+  <!-- Fondo: rosa del portafolio -->
+  <rect width="64" height="64" rx="13" fill="#c0577a"/>
+
+  <!-- Orejas y cabeza: una sola silueta color crema -->
+  <g fill="#f6ece0">
+    <polygon points="9.5,32 15,5 33,23"/>
+    <polygon points="54.5,32 49,5 31,23"/>
+    <ellipse cx="32" cy="39" rx="21.5" ry="18.5"/>
+  </g>
+
+  <!-- Interior de las orejas -->
+  <g fill="#eec2ce">
+    <polygon points="14.6,27.5 17.4,12.5 27.5,23.5"/>
+    <polygon points="49.4,27.5 46.6,12.5 36.5,23.5"/>
+  </g>
+
+  <!-- Ojos entornados y contentos -->
+  <g fill="none" stroke="#6d4b3e" stroke-width="4.6" stroke-linecap="round">
+    <path d="M19 38 Q23.2 34.5 27.4 38"/>
+    <path d="M36.6 38 Q40.8 34.5 45 38"/>
+  </g>
+
+  <!-- Nariz -->
+  <path d="M32 50.5 L27.6 45.6 Q32 43.7 36.4 45.6 Z" fill="#b8506d"/>
+</svg>
