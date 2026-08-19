@@ -643,26 +643,16 @@ a:hover { color: var(--rosa); text-decoration-color: var(--rosa); }
 }
 .desplegable summary::-webkit-details-marker { display: none; }
 .desplegable summary::before {
-  content: "";
+  /* Círculo + cruz dibujados juntos en SVG: centrado exacto, sin fuente */
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E%3Ccircle cx='9' cy='9' r='8.5' fill='none' stroke='%23ecd0d8'/%3E%3Cpath d='M5.4 9h7.2M9 5.4v7.2' stroke='%23c0577a' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
   width: 1.15rem;
   height: 1.15rem;
   flex: 0 0 auto;
-  border: 1px solid var(--rosa-linea);
-  border-radius: 50%;
-  /* Plus con dos barras dibujadas y centradas (independiente de la fuente) */
-  background-image:
-    linear-gradient(var(--rosa), var(--rosa)),
-    linear-gradient(var(--rosa), var(--rosa));
-  background-size: 0.5rem 1px, 1px 0.5rem;
-  background-position: center, center;
-  background-repeat: no-repeat;
+  line-height: 0;
 }
 .desplegable[open] summary::before {
   /* Solo la barra horizontal: signo menos */
-  background-image: linear-gradient(var(--rosa), var(--rosa));
-  background-size: 0.5rem 1px;
-  background-position: center;
-  background-repeat: no-repeat;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E%3Ccircle cx='9' cy='9' r='8.5' fill='none' stroke='%23ecd0d8'/%3E%3Cpath d='M5.4 9h7.2' stroke='%23c0577a' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 .desplegable__cuerpo { padding-top: 1rem; }
 
